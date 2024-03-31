@@ -41,18 +41,12 @@ public class Book {
         this.stock = stock;
     }
 
+    public List<Author> getAuthors() {
+        return authors;
+    }
 
     @Override
     public String toString() {
-        return "Libro{" +
-                "titulo='" + title + '\'' +
-                ", precio=" + price +
-                ", stock=" + stock +
-                ", autor=" + Arrays.toString(authors) +
-                '}';
-    }
-
-    public String printMessage() {
         StringBuilder names = new StringBuilder();
         for (Author author : authors) {
             if (author != null) {
@@ -62,7 +56,25 @@ public class Book {
                 names.append(" ,");
             }
         }
-        return "El libro, " + this.title + " de " + names + ". Se vende a " + this.price + " pesos";
+        return "Libro{" +
+                "titulo='" + this.title + '\'' +
+                ", precio=" + this.price +
+                ", stock=" + this.stock +
+                ", autor=" + names +
+                '}';
+    }
+
+    public String printMessage() {
+        StringBuilder names = new StringBuilder();
+        for (Author author : authors) {
+            if (author != null) {
+                names.append(",");
+                names.append(author.getName());
+                names.append(" ");
+                names.append(author.getSurname());
+            }
+        }
+        return "El libro, " + this.title + " de " + names + " - Se vende a " + this.price + " pesos";
     }
 }
 
