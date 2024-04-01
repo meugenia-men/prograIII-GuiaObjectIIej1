@@ -33,9 +33,9 @@ public class Main {
 
         /*Imprima por pantalla los atributos del Autor Joshua, accediendo desde el
         Libro “Effective Java”*/
+        System.out.println("_______________________Atributos del autor desde libro________________________");
+        System.out.println(b1.getAuthors());
 
-        System.out.println();
-        ///aun no se como acceder desde libro a la lista de autores
 
         /*Agregue un método a la clase Libro que posibilite imprimir en pantalla el
         siguiente mensaje: “El libro, {título} de {nombre del autor}. Se vende a {precio} pesos.”*/
